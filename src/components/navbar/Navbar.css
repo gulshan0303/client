@@ -1,0 +1,40 @@
+.navbar{
+    background-color: aliceblue;
+    display: flex;
+    justify-content: space-between;
+    height: 65px;
+    box-shadow: 4px 5px 5px rgba(0, 0, 0, 0.1);
+}
+.logo{
+    display: flex;
+    align-items: center;
+    margin-left: 1rem;
+}
+.rightSection{
+    display: flex;
+    align-items: center;
+}
+.rightSection p{
+    margin-right: 1rem;
+    cursor: pointer;
+    font-size: 17px;
+    font-weight: 400;
+}
+.logout{
+    width: 80px;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid red;
+    background-color: transparent;
+  color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3 ease;
+}
+.logout:hover{
+  background-color: red;
+  color: #fff;
+  border-radius: 22px;
+ 
+}
