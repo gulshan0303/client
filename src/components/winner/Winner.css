@@ -1,8 +1,10 @@
 .table-container {
     overflow-x: auto;
+    margin: 1rem 1rem;
   }
   
   .table {
+    margin: 3rem auto;
     border-collapse: collapse;
     border: 1px solid black;
     width: 100%;
@@ -13,7 +15,10 @@
     text-align: left;
     border-bottom: 1px solid black;
   }
-  
+  td .imagePrev img{
+    width: 20px;
+    height: 20px;
+  }
   th {
     background-color: #f2f2f2;
   }

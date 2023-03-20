@@ -13,7 +13,6 @@ const Navbar = () => {
     dispatch(setLogout());
     navigate("/login");
   };
-  console.log("user", user);
   return (
     <div className="navbar">
       <div className="logo">

@@ -1,11 +1,19 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import { loginUser, registerUser } from '../api';
+import { loginUser, registerUser,saveImage } from '../api';
 
 export const registerUserAsync = createAsyncThunk(
   'auth/registerUser',
   async (userData) => {
     const response = await registerUser(userData);
-    console.log('response', response)
+    return response.data;
+  }
+);
+
+export const imageSave = createAsyncThunk(
+  'image/likeImage',
+  async (userData) => {
+    const response = await saveImage(userData);
+  
     return response.data;
   }
 );
@@ -14,7 +22,7 @@ export const loginUserAsync = createAsyncThunk(
   'auth/loginUser',
   async (userData) => {
     const response = await loginUser(userData);
-    console.log('response', response)
+    
     return response.data;
   }
 );
@@ -24,6 +32,8 @@ const initialState ={
     error: null,
     user:null,
     success: false,
+    imageUrl:null,
+    clickTime:null
 }
 
 const registrationSlice = createSlice({
@@ -32,6 +42,7 @@ const registrationSlice = createSlice({
   reducers: {
     setUser: (state, action) => {
       state.user = action.payload;
+      state.imageUrl=action.payload
     },
     setLogout: (state, action) => {
       localStorage.clear();
@@ -54,7 +65,7 @@ const registrationSlice = createSlice({
       })
       .addCase(registerUserAsync.rejected, (state, action) => {
         state.isLoading = false;
-        state.error = action.payload.message;
+        state.error = action.payload?.message;
         state.success = false;
       })
 
@@ -72,6 +83,23 @@ const registrationSlice = createSlice({
         state.success = true;
       })
       .addCase(loginUserAsync.rejected, (state, action) => {
+        state.isLoading = false;
+        state.error = action.payload.message;
+        state.success = false;
+      })
+
+      .addCase(imageSave.pending, (state) => {
+        state.isLoading = true;
+        state.error = null;
+        state.success = false;
+      })
+      .addCase(imageSave.fulfilled, (state,action) => {
+        state.isLoading = false;
+        state.clickTime = action.payload
+        state.imageUrl = action.payload
+        state.success = true;
+      })
+      .addCase(imageSave.rejected, (state, action) => {
         state.isLoading = false;
         state.error = action.payload.message;
         state.success = false;
