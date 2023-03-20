@@ -3,6 +3,7 @@ import "./Navbar.css";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { setLogout } from "../../redux/features/authSlice";
+import PetsIcon from '@material-ui/icons/Pets';
 const Navbar = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -18,11 +19,14 @@ const Navbar = () => {
       <div className="logo">
         <h2><Link to='/'>DogFinder</Link></h2>
       </div>
+      <div className="logoIcon">
+        <Link to='/'><PetsIcon className="icon"/></Link>
+      </div>
       <div className="rightSection">
         {user?.success ? (
           <>
             <p>
-              <Link to="/winner">Winner</Link>
+              <Link to="/winner" className="winner">Winner</Link>
             </p>
             <p>{user?.user?.name}</p>
             <p className="logout" onClick={() => handleLogout()}>logout</p>

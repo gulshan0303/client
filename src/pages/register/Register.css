@@ -1,5 +1,6 @@
 
 .register{
+  
     width: 100%;
     display: flex;
     align-items: center;
@@ -11,63 +12,24 @@
   background-position: center center;
  
   
+} 
+.main{
+    margin-top: -6rem;
 }
 
-.formData{
-    display: flex;
-    justify-content: center;
-    width: 400px;
-    height: 300px;
-  
-    
-    /* background-color: red; */
-
-}
-.box{
-    display: flex;
-    flex-direction: column;
-    margin-top: 1rem;
-}
-.box label{
-    display: flex;
-    align-items: center;
-    font-size: 18px;
-    flex-direction: column;
-     color: #000;
-    font-weight: 400;
-}
-.box input{
-    width: 300px;
-    padding: 8px;
-    outline: none;
-    border-radius: 8px;
-    outline: none;
-    margin-top: 4px;
-    font-size: 17px;
-    /* color: rgba(207, 21, 21, 0.849); */
-    
-}
-button{
-    width: 50%;
-    padding: 10px;
-    margin: 1rem 4rem;
-    cursor: pointer;
-    border-radius: 8px;
-    font-size: 17px;
-    
-}
-button:hover{
-    background-color: rgb(236, 91, 212);
+.MuiTypography-alignCenter{
    
-}
-h5{
-    color: #333;
-    font-size: 14px;
-}
-a{
-    text-decoration: none;
-}
-.error{
-    color: red;
+    display: flex;
+    flex-direction: column;
+    margin-top: -5rem;
 }
 
+.MuiSvgIcon-root{
+    font-size: 53px !important;
+}
+.MuiButton-root{
+    background-color: rgb(156, 34, 160) !important;
+}
+.signup{
+    margin-right: 6rem;
+}

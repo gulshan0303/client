@@ -3,3 +3,11 @@
     align-items: center;
     justify-content: center;
 }
+
+@media screen and (max-device-width: 480px){
+    .home{
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+}

@@ -8,6 +8,7 @@ import moment from "moment"
 const Winner = () => {
   const user = JSON.parse(localStorage.getItem('profile'));
   const img = JSON.parse(localStorage.getItem('img'));
+  console.log('img', img)
   const dispatch = useDispatch()
   useEffect(() => {
     dispatch(setUser({user,img}))

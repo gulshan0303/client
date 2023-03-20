@@ -1,41 +1,74 @@
-.navbar{
-    background-color: aliceblue;
-    display: flex;
-    justify-content: space-between;
-    height: 65px;
-    box-shadow: 4px 5px 5px rgba(0, 0, 0, 0.1);
+.navbar {
+  background-color: rgb(200, 199, 201);
+  display: flex;
+  justify-content: space-between;
+  height: 65px;
+  box-shadow: 2px 3px 3px rgba(0, 0, 0, 0.1);
 }
-.logo{
-    display: flex;
-    align-items: center;
-    margin-left: 1rem;
+
+.logo {
+  display: flex;
+  align-items: center;
+  margin-left: 1rem;
 }
-.rightSection{
-    display: flex;
-    align-items: center;
-    margin-right: 1rem;
+.logo h2 a {
+  color: purple;
 }
-.rightSection p{
-    margin-right: 1rem;
-    cursor: pointer;
-    font-size: 18px;
-    font-weight: 400;
+.rightSection {
+  display: flex;
+  align-items: center;
+  margin-right: 1rem;
 }
-.logout{
-    width: 80px;
-    padding: 5px;
-    border-radius: 5px;
-    border: 1px solid red;
-    background-color: transparent;
-  color: #000;
+.rightSection p {
+  margin-right: 1rem;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 400;
+}
+.winner {
+  color: #008000ef;
+  font-weight: 400;
+}
+.logout {
+  width: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 8px;
+  border-radius: 5px;
+  background-color: #9f36e6;
+  border-radius: 8px;
+  color: #fff;
+  transition: all 0.3 ease;
+}
+
+@media screen and (max-device-width: 480px) {
+  .navbar {
+    position: sticky;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: all 0.3 ease;
+    scroll-behavior: smooth;
+  }
+  .logoIcon .icon{
+    width: 33px;
+    margin-right: 3rem;
+    color: #9f36e6;
+  }
+  .logo{
+   display: none;
+    
+  }
+  .rightSection p {
+    font-size: 14px;
+  }
+  .logout{
+    margin-right: -1rem !important;
+  }
 }
-.logout:hover{
-  background-color: red;
-  color: #fff;
-  border-radius: 22px;
- 
+@media screen and (min-device-width: 480px){
+  .logoIcon{
+    display: none;
+  }
 }
+

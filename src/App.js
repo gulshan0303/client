@@ -10,9 +10,10 @@ import { setUser } from "./redux/features/authSlice";
 import Winner from "./components/winner/Winner";
 function App() {
   const user = JSON.parse(localStorage.getItem('profile'));
+  const img = JSON.parse(localStorage.getItem('img'));
   const dispatch = useDispatch();
   useEffect(() => {
-     dispatch(setUser(user))
+     dispatch(setUser({user,img}))
   },[])
   return (
     <div className="App">
